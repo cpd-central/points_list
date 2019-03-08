@@ -10,7 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/protocols', 'ListController@protocolindex');
 
 Route::get('/', function () {
     return view('welcome');
