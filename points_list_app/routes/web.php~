@@ -17,14 +17,9 @@
 Route::get('/projectcreate', 'ProjectController@create');
 Route::post('/projectcreate', 'ProjectController@store');
 Route::get('/projectsindex', 'ProjectController@index');
-Route::get('/projectedit/{id}', 'PointsListController@relayindex');
-Route::post('/projectedit/{id}', 'ProjectController@update');
+Route::get('/edit/{id}', 'ProjectController@edit');
+Route::post('/edit/{id}', 'ProjectController@update');
 Route::delete('/{id}', 'ProjectController@destroy');
-
-/**
- *Points List Routes
- */
-
 
 
 Route::get('/', function () {

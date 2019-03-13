@@ -1,0 +1,52 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Project;
+
+
+class ProjectController extends Controller
+{
+	public function create()
+	{
+		return view('/projectcreate');
+	}
+
+	public function store(Request $request)
+	{
+		#construct new project	
+		$project = new Project();
+		$project->projectname = $request->get('projectname');
+		$project->save();
+		return redirect('/projectsindex')->with('success', 'Project has been successfully created');
+	}
+
+	public function index()
+	{
+		#get all of the project objects	
+		$projects = Project::all();
+		return view('/projectsindex', compact('projects'));
+	}
+
+	public function edit($id)
+	{
+		$project = Project::find($id);
+		return view('/projectedit', compact('project', 'id'));
+	}
+
+	public function update(Request $request, $id)
+	{
+		$project = Project::find($id);
+		$project->projectname = $request->get('projectname');
+		$project->save();
+		return redirect('/projectsindex')->with('success', 'Project has been successfully updated');
+	}
+
+	public function destroy($id)
+	{
+		$project = Project::find($id);
+		$project->delete();
+		return redirect('/projectsindex')->with('success', 'Project has been successfully deleted');
+	}
+}
