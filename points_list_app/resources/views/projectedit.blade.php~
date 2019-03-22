@@ -40,8 +40,8 @@
     </tbody>
   </table>
   </div>
-	<div class="col-md-4 center-block">	
-		<button type="button" class="btn btn-primary center-block">Add Relay</button>	
+	<div class="col-md-4 text-center">	
+		<a href="{{action('PointsListController@addrelay', $id)}}" class="btn btn-primary">Add Relay</a>	
 	</div>	
 	</body>
 </html>

@@ -18,7 +18,7 @@ class ProjectController extends Controller
 		#construct new project	
 		$project = new Project();
 		$project->projectname = $request->get('projectname');
-		$project->relays = [];	
+		$project->relays = ['test' => ['relayname' => 'test_name']];	
 		$project->save();
 		return redirect('/projectsindex')->with('success', 'Project has been successfully created');
 	}
@@ -33,7 +33,8 @@ class ProjectController extends Controller
 	public function edit($id)
 	{
 		$project = Project::find($id);
-		return view('/projectedit', compact('project', 'id'));
+		$relays = $project['relays'];	
+		return view('/projectedit', compact('relays', 'id'));
 	}
 
 	public function update(Request $request, $id)

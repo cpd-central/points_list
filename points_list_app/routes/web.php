@@ -24,7 +24,8 @@ Route::delete('/{id}', 'ProjectController@destroy');
 /**
  *Points List Routes
  */
-
+Route::get('/addrelay/{id}', 'PointsListController@addrelay');
+Route::post('/addrelay/{id}', 'PointsListController@storerelay');
 
 
 Route::get('/', function () {

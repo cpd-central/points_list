@@ -26,7 +26,7 @@
       
       @foreach($relays as $relay)
       <tr>
-        <td>{{$relay->relayname}}</td>
+        <td>{{$relay['relayname']}}</td>
         <td><a href="{{action('ProjectController@edit', $project->id)}}" class="btn btn-warning">Edit</a></td>
         <td>
           <form action="{{action('ProjectController@destroy', $project->id)}}" method="post">
@@ -41,7 +41,7 @@
   </table>
   </div>
 	<div class="col-md-4 text-center">	
-		<button type="button" class="btn btn-primary">Add Relay</button>	
+		<a href="{{action('PointsListController@addrelay', $id)}}" class="btn btn-primary">Add Relay</a>	
 	</div>	
 	</body>
 </html>

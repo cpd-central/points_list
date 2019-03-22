@@ -40,5 +40,8 @@
     </tbody>
   </table>
   </div>
-  </body>
+		<div class="col-md-4 text-center">	
+			<a href="{{action('ProjectController@create')}}" class="btn btn-primary">Create Project</a>	
+		</div>	
+	</body>
 </html>
